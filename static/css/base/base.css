@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #DEE1ED;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header{
+    background-color: #655386;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+a{
+    text-decoration: none;
+}
+
+a > i{
+    text-decoration: none;
+    color: white;
+}
+
+.mnlateral{
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.linha{
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+body.sidebar-open .line:nth-child(1){
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+body.sidebar-open .line:nth-child(2){
+    opacity: 0;
+}
+
+body.sidebar-open .line:nth-child(3){
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.txtcent{
+    display: flex;
+    gap: 1rem;
+    font-size: 20px;
+}
+
+.txtcent a  {
+    color: #DEE1ED;
+}
+
+.icon{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.sidebar{
+    position: fixed;
+    left: -250px;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    background-color: white;
+    transition: left 0.3s ease-in-out;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.sidebar.open{
+    left: 0;
+}
+
+.sidebar ul{
+    list-style-type: none;
+    padding: 1rem;
+}
+
+.sidebar ul li{
+    margin-bottom: 1rem;
+}
+
+.sidebar ul li a{
+    text-decoration: none;
+    color: #655386;
+    font-size: 20px;
+    padding-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover{
+    color: #DEE1ED;
+}
+
+main{
+    padding: 1rem;
+    transition: margin-left 0.3s ease-in-out;
+}
+/* 
+body.sidebar-open main{
+    margin-left: 250px;
+} */
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: background-color 0.3s ease-in-out, visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    z-index: 999;
+}
+
+.overlay.active{
+    background-color: rgba(0,0,0,0.5);
+    visibility: visible;
+    opacity: 1;
+}

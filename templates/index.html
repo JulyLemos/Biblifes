@@ -1,0 +1,57 @@
+<!DOCTYPE html>   <!--Página com frases-->
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/index/style.css">
+    <title>Página de Frases</title>
+</head>
+<body>
+    <div class="container">
+        <table class="tabela">
+            <tr>
+                <th>    
+                    <p id="frase">Carregando frase...</p><br>
+                    <p id="autor">Instrumentos Mortais</p>
+                </th>
+            </tr>
+        </table>
+        <button id="continuar">Continuar</button>
+    </div>
+
+    <script>
+        // // carregar arquivo JSON 
+        // fetch('/static/frases.json')
+        //     .then(response => response.json())
+        //     .then(frases => {
+        //         // frase aleatória 
+        //         const fraseAleatoria = frases[Math.floor(Math.random() * frases.length)];
+        //         // inserir a frase 
+        //         document.getElementById('frase').innerText = fraseAleatoria.frase;
+        //         document.getElementById('autor').innerText = `— ${fraseAleatoria.autor}`;
+                
+        //         // botão aparecendo depois de 2s
+        //         setTimeout(() => {
+        //             document.getElementById('continuar').style.display = 'block'; 
+        //         }, 2000);
+        //     })
+        //     .catch(error => {  //caso dê algum erro ao carregar a frase
+        //         console.error('Erro ao carregar o arquivo JSON:', error);
+        //         document.getElementById('frase').innerText = 'Erro ao carregar a frase.';
+        //         document.getElementById('autor').innerText = '';
+        //     });
+
+
+        // // redirecionar a uma outra página depois de 2 segundos ao clicar no botão
+        // document.getElementById('continuar').addEventListener('click', () => {
+        //     document.getElementById('continuar').disabled = true; // desabilita o botão
+        //     setTimeout(() => {
+        //         window.location.href = 'lar'; 
+        //     }, 1000);
+        // });
+    </script>
+
+</body>
+<script src="/static/js/star/star.js"></script>
+<script src="/static/js/botao_index/botao.js"></script>
+</html>

@@ -1,0 +1,243 @@
+{% extends "base.html" %}
+{% block css %}<link rel="stylesheet" href="/static/css/lar/lar.css">{% endblock %}
+{% block titulo %}Lar{% endblock %}
+
+{% block conteudo %}
+<div class="pesquisa"> <!--search-container-->
+    <input type="text" class="pesquisa-input" placeholder="Livros, usuários, clubes...">
+</div>
+
+<div class="container">
+    <div class="lateral">
+        <div class="clubes">
+            <h2>Clubes Literários</h2>
+            <div class="clube">Literatura Clássica</div>
+            <div class="clube">Romance</div>
+            <div class="clube">Danmei</div>
+            <div class="clube">Distopia</div>
+            <div class="clube">Suspense</div>
+        </div>
+    </div>
+    <div class="principal">
+        <div class="mais-lidos">
+            <h2>Livros Mais Lidos</h2>
+            <div class="carrosel-livro" id="ml-carrosel">
+                <div class="livro">
+                    <div class="livro-capa" style="background-image: url('https://img.skoob.com.br/IoKS6BiuWFHfzYzjs_qhD6f5ZPE=/200x/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/livros/693/O_PEQUENO_PRINCIPE_1441584936693SK1441584936B.jpg');"></div>
+                    <span>O Pequeno <br> Príncipe </span>
+                </div>
+                <div class="livro">
+                    <div class="livro-capa" style="background-image: url('https://img.skoob.com.br/PW_xixfHBfVBdm9-mQoIfLQZqUA=/200x/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/livros/108/HARRY_POTTER_E_A_PEDRA_FILOSOFAL_1389761588B.jpg');"></div>
+                    <span>Harry Potter e a <br>Pedra Filosofal</span>
+                </div>
+                <div class="livro">
+                    <div class="livro-capa" style="background-image: url('https://img.skoob.com.br/O8zWQEhgL-T7TfPuQtSFAETKYpI=/200x/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/livros/357/HARRY_POTTER_E_A_CAMARA_SECRETA_1343592468B.jpg');"></div>
+                    <span>Harry Potter e a <br> Câmara Secreta</span>
+                </div>
+                <div class="livro">
+                    <div class="livro-capa" style="background-image: url('https://img.skoob.com.br/sZJOlkmQgTJcgh24DLOTsC7RU28=/200x/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/livros/247555/A_CULPA_E_DAS_ESTRELAS_1447651029247555SK1447651029B.jpg');"></div>
+                    <span>A Culpa é <br> das Estrelas</span>
+                </div>
+                <div class="livro">
+                    <div class="livro-capa" style="background-image: url('https://img.skoob.com.br/9lpbG1RXkwpxytyEdYW4ETRm-xQ=/200x/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/livros/358/HARRY_POTTER_E_O_PRISIONEIRO_D_1451338416358SK1451338416B.jpg');"></div>
+                    <span>Harry Potter e o <br> Prisioneiro de Azkaban </span>
+                </div>
+                <div class="livro">
+                    <div class="livro-capa" style="background-image: url('https://img.skoob.com.br/zV85_hI4cAwIM3hvwfDvTIMSJIg=/200x/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/livros/355/HARRY_POTTER_E_O_CALICE_DE_FOGO_1343592881B.jpg');"></div>
+                    <span>Harry Potter e <br> o Cálice de Fogo</span>
+                </div>
+                <div class="livro">
+                    <div class="livro-capa" style="background-image: url('https://img.skoob.com.br/nCgvnRmlrfbjlXRTuNkkXAgJW74=/200x/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/livros/736/O_LADRAO_DE_RAIOS_1364235342B.jpg');"></div>
+                    <span>O Ladrão de Raios</span>
+                </div>
+                <div class="livro">
+                    <div class="livro-capa" style="background-image: url('https://img.skoob.com.br/cKs_lZ8NAKVc5P1P_pRUN5v_nh0=/200x/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/livros/359/HARRY_POTTER_E_A_ORDEM_DA_FENIX_1343593292B.jpg');"></div>
+                    <span>Harry Potter e a <br> Ordem da Fênix</span>
+                </div>
+                <div class="livro">
+                    <div class="livro-capa" style="background-image: url('https://img.skoob.com.br/6ajKrkUugO84BRw37NOcjCuNtXQ=/200x/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/livros/562/HARRY_POTTER_E_O_ENIGMA_DO_PRI_1424051110562SK1424051110B.jpg');"></div>
+                    <span>Harry Potter e o <br> Enigma do Príncipe</span>
+                </div>
+                <div class="livro">
+                    <div class="livro-capa" style="background-image: url('https://img.skoob.com.br/18v3YDf67NRSQf8VtLPZxaeAfog=/200x/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/livros/1200/HARRY_POTTER_E_AS_RELIQUIAS_DA_14475522561200SK1447552256B.jpg');"></div>
+                    <span>Harry Potter e <br> as Relíquias da Morte</span>
+                </div>
+            </div>
+            <button class="nav-button prev" data-target="ml-carrosel">&lt;</button>
+            <button class="nav-button next" data-target="ml-carrosel">&gt;</button>
+        </div>
+        <div class="livros-recomendados">
+            <h2>Livros Recomendados</h2>
+            <div class="carrosel-livro" id="recomendados-carrosel">
+                <div class="livro">
+                    <div class="livro-capa" style="background-image: url('https://img.skoob.com.br/qG-k8gqHtDcf0Gg-_0f767VIpHM=/200x/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/livros/1160888/THE_HUSKY_AND_HIS_WHITE_CAT_SH_15890454961160888SK1589045499B.jpg');"></div>
+                    <span>Husky and His <br> White Cat Shizun</span>
+                </div>
+                <div class="livro">
+                    <div class="livro-capa" style="background-image: url('https://img.skoob.com.br/XgieJelpKv5mkTdSZaBvS__rvYU=/200x/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/livros/122242029/OS_HOMENS_DO_REI_1671047721122242029SK-V11671047722B.jpg');"></div>
+                    <span>Os Homens do Rei</span>
+                </div>
+                <div class="livro">
+                    <div class="livro-capa" style="background-image: url('https://img.skoob.com.br/9Zs-ysixlibqDvjrkYBcUMsZD58=/200x/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/livros/11966421/TIANBAO_FUYAO_LU_164129805411966421SK-V11641298055B.jpg');"></div>
+                    <span>Tianbao Fuyao Lu #4</span>
+                </div>
+                <div class="livro">
+                    <div class="livro-capa" style="background-image: url('https://img.skoob.com.br/9e5z9AL2fQrY0u4L2ZmF5h2cdr4=/200x/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/livros/11846247/OMNISCIENT_READERS_VIEWPOINT_167347419211846247SK-V11673474193B.jpg');"></div>
+                    <span>Omniscient Reader's <br> Viewpoint <br> (전지적 독자 시점 #1)
+                    </span>
+                </div>
+                <div class="livro">
+                    <div class="livro-capa" style="background-image: url('https://img.skoob.com.br/cH10w490KjWwAas4QPkr4VJFEXo=/200x/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/livros/245922/ROCK_CHICK_1339626762B.jpg');"></div>
+                    <span>Rock Chick</span>
+                </div>
+                <div class="livro">
+                    <div class="livro-capa" style="background-image: url('https://img.skoob.com.br/MBvCbWSoK8C4_4-OwpUEPemK-cY=/200x/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/livros/11744963/THE_SCUM_VILLAINS_SELFSAVING_166542127911744963SK-V11665421280B.jpg');"></div>
+                    <span>SVSSS 2</span>
+                </div>
+                <div class="livro">
+                    <div class="livro-capa" style="background-image: url('https://img.skoob.com.br/IpxIsOQO-0gAGtKMY-QvRPiskOU=/200x/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/livros/122344811/PETALAS_DE_AKAYAMA_1690495511122344811SK-V11690495512B.jpg');"></div>
+                    <span>Pétalas de <br> Akayama </span>
+                </div>
+                <div class="livro">
+                    <div class="livro-capa" style="background-image: url('https://img.skoob.com.br/OVVEHJGvlpOAe92HKbGNZMM54-E=/200x/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/livros/106468/JOGOS_VORAZES_1447803914106468SK1447803914B.jpg');"></div>
+                    <span>Jogos Vorazes</span>
+                </div>
+                <div class="livro">
+                    <div class="livro-capa" style="background-image: url('https://img.skoob.com.br/wc_LiZE9Zx_w55KjkFgXg-oF01k=/200x/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/livros/122398619/NOIVA_1706033214122398619SK-V11706033215B.jpg');"></div>
+                    <span>Noiva</span>
+                </div>
+                <div class="livro">
+                    <div class="livro-capa" style="background-image: url('https://img.skoob.com.br/KfNc1S6ZKM7WpmZFdQgrPbNlNLM=/200x/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/livros/125/O_MEU_PE_DE_LARANJA_LIMA_1664500830125SK-V11664500832B.jpg');"></div>
+                    <span>O Meu Pé de <br> Laranja Lima </span>
+                </div>
+            </div>
+            <button class="nav-button prev" data-target="recomendados-carrosel">&lt;</button>
+            <button class="nav-button next" data-target="recomendados-carrosel">&gt;</button>
+        </div>
+    </div>
+    <div class="lateral">
+        <div class="top-leitores">
+            <h2>Top Leitores</h2>
+            <div class="leitor">
+                <span>lynch2 </span>
+                <span>122579 páginas</span>
+            </div>
+            <div class="leitor">
+                <span>fatuizitas</span>
+                <span>14841 páginas</span>
+            </div>
+            <div class="leitor">
+                <span>satatanica</span>
+                <span>95414 páginas</span>
+            </div>
+            <div class="leitor">
+                <span>min9yuk</span>
+                <span>29120 páginas</span>
+            </div>
+            <div class="leitor">
+                <span>Sooh.misky</span>
+                <span>17506 páginas</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+
+
+    //setas do carrosel
+    document.addEventListener('DOMContentLoaded', function() {
+        function setupCarousel(carouselId) {
+            const carousel = document.getElementById(carouselId);
+            const prevButton = document.querySelector(`.nav-button.prev[data-target="${carouselId}"]`);
+            const  nextButton = 
+            document.querySelector(`.nav-button.next[data-target="${carouselId}"]`);
+            const livros = carousel.querySelectorAll('.livro');
+            // const livrosPerPage = 6;
+            const livrosPerPage = Math.floor(carousel.offsetWidth / 95);
+            let currentIndex = 0;
+            let autoScrollInterval;
+
+            function showlivros(index) {
+                livros.forEach((livro, i) => {
+                    const offset = i - index;
+                    livro.style.transform = `translateX(${offset * 95}px)`;
+                    livro.style.opacity = offset >= 0 && offset < livrosPerPage ? '1' : '0.5';
+                });
+            }
+
+            function updateButtons() {
+                prevButton.style.display = currentIndex === 0 ? 'none' : 'block';
+                nextButton.style.display = currentIndex >= livros.length - livrosPerPage ? 'none' : 'block';
+            }
+
+            function nextlivro() {
+                if (currentIndex < livros.length - livrosPerPage) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0;
+                }
+                showlivros(currentIndex);
+                updateButtons();
+            }
+
+            function prevlivro() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                } else {
+                    currentIndex = livros.length - livrosPerPage;
+                }
+                showlivros(currentIndex);
+                updateButtons();
+            }
+
+            prevButton.addEventListener('click', function() {
+                prevlivro();
+                resetAutoScroll();
+            });
+
+            nextButton.addEventListener('click', function() {
+                nextlivro();
+                resetAutoScroll();
+            });
+
+            livros.forEach(livro => {
+                livro.addEventListener('click', function() {
+                    nextlivro();
+                    resetAutoScroll();
+                });
+            });
+
+            function startAutoScroll() {
+                autoScrollInterval = setInterval(nextlivro, 3000);
+            }
+
+            function resetAutoScroll() {
+                clearInterval(autoScrollInterval);
+                startAutoScroll();
+            }
+
+            showlivros(currentIndex);
+            updateButtons();
+            startAutoScroll();
+
+            carousel.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
+            carousel.addEventListener('mouseleave', startAutoScroll);
+
+            window.addEventListener('resize', function(){
+                const newlivrosPerPage = Math.floor(carousel.offsetWidth / 95);
+                if (newlivrosPerPage !== livrosPerPage) {
+                    livrosPerPage = newlivrosPerPage;
+                    showlivros(currentIndex);
+                    updateButtons();
+                }
+            });
+        }
+
+        setupCarousel('ml-carrosel');
+        setupCarousel('recomendados-carrosel');
+    });
+
+</script>
+
+{% endblock %}

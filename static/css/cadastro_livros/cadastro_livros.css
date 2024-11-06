@@ -1,0 +1,46 @@
+h1{
+    text-align: center;
+    padding-top: 60px;
+}
+
+form{
+    text-align: center; 
+    justify-content: center; 
+    flex-wrap: wrap;
+}
+
+input{
+    min-width: 200px;
+}
+
+form > div.um{
+    /* margin: 10px; */
+    background-color:rgba(168, 169, 201, 0.2);
+    padding: 50px 50px 10px 50px;  /*espaço entre os campos do formulário e o fundo*/
+    margin: 50px 200px 50px 200px;
+    border-radius: 5px;
+}
+
+/*botão*/
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color:rgba(168, 169, 201, 0.2);
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.enviar {
+    border-color: #655386;
+    color: rgb(89, 89, 89);
+    width: 100px; /*largura*/
+}
+
+.enviar:hover{
+    background-color: #655386;
+    color: white;
+    transition: 0.3s ease-in-out;
+}

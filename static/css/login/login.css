@@ -1,0 +1,82 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom right, #655386, #837BA6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.card {
+    background-color: rgba(168, 169, 201, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1,h5 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    color:white;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(204, 206, 225, 0.2);
+    color: white;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.sign-in {
+    border-color: #655386;
+    background-color: rgba(168, 169, 201, 0.2);
+    color: white;
+}
+
+.sign-in:hover{
+    background-color: #655386;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+.signup-link a {
+    color: white;
+    text-decoration: underline;
+}

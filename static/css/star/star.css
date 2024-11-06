@@ -1,0 +1,12 @@
+.star {
+    position: fixed;
+    width: 1px;
+    height: 1px;
+    background-color: white;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
