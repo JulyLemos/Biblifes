@@ -32,25 +32,25 @@ def get_login(request: Request): #mudar depois
 
 
 #criar arquivos sql
-@router.post("/post_cadastro_livros")
-def post_cadastro_livros(
-    titulo: str = Form(...),
-    autor: str = Form(...),
-    ano: str = Form(...),
-    paginas: str = Form(...),
-    edicao: str = Form(...),
-    idioma: str = Form(...),
-    editora: str = Form(...),
-    isbn: str = Form(...),
-    genero1: str = Form(...),
-    genero2: str = Form(...),
-    sinopse: str = Form(...)):
-    livro = Livro(None, titulo, autor, ano, paginas, edicao, idioma, editora, isbn, genero1, genero2, sinopse)
-    livro = livro_repo.inserir_livro(livro)
-    if livro:
-        return RedirectResponse("/lar", 303)
-    else:
-        return RedirectResponse("/cadastro_livros", 303)
+# @router.post("/post_cadastro_livros)
+# def post_cadastro_livros(
+#     titulo: str = Form(...),
+#     autor: str = Form(...),
+#     ano: str = Form(...),
+#     paginas: str = Form(...),
+#     edicao: str = Form(...),
+#     idioma: str = Form(...),
+#     editora: str = Form(...),
+#     isbn: str = Form(...),
+#     genero1: str = Form(...),
+#     genero2: str = Form(...),
+#     sinopse: str = Form(...)):
+#     livro = Livro(None, titulo, autor, ano, paginas, edicao, idioma, editora, isbn, genero1, genero2, sinopse)
+#     livro = livro_repo.inserir_livro(livro)
+#     if livro:
+#         return RedirectResponse("/lar", 303)
+#     else:
+#         return RedirectResponse("/cadastro_livros", 303)
     
 
 
