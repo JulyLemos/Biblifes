@@ -2,6 +2,10 @@ from fastapi import APIRouter, Form, Request
 from fastapi.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
 
+from models.livro_model import Livro
+from models.usuario_model import Usuario
+from repositories import livro_repo, usuario_repo
+
 
 router = APIRouter()
 templates = Jinja2Templates(directory="templates")
@@ -30,28 +34,41 @@ def get_login(request: Request): #mudar depois
     response = templates.TemplateResponse("login.html", {"request": request})
     return response
 
-
-#criar arquivos sql
-# @router.post("/post_cadastro_livros)
-# def post_cadastro_livros(
-#     titulo: str = Form(...),
-#     autor: str = Form(...),
-#     ano: str = Form(...),
-#     paginas: str = Form(...),
-#     edicao: str = Form(...),
-#     idioma: str = Form(...),
-#     editora: str = Form(...),
-#     isbn: str = Form(...),
-#     genero1: str = Form(...),
-#     genero2: str = Form(...),
-#     sinopse: str = Form(...)):
-#     livro = Livro(None, titulo, autor, ano, paginas, edicao, idioma, editora, isbn, genero1, genero2, sinopse)
-#     livro = livro_repo.inserir_livro(livro)
-#     if livro:
-#         return RedirectResponse("/lar", 303)
-#     else:
-#         return RedirectResponse("/cadastro_livros", 303)
+@router.post("/post_cadastro")
+def post_cadastro(
+    matricula: str = Form(...),
+    senha: str = Form(...)):
+    usuario = Usuario(None, matricula, senha)
+    usuario = usuario_repo.inserir_usuario(usuario)
+    if usuario:
+        return RedirectResponse("/lar", 303)
+    else:
+        return RedirectResponse("/cadastro", 303)
     
+@router.get("/cadastro_livro")
+def get_cadastro_livro(request: Request):
+    response = templates.TemplateResponse("cadastro_livro.html", {"request": request})
+    return response
+
+@router.post("/post_cadastro_livro")
+def post_cadastro_livro(
+    titulo: str = Form(...),
+    autor: str = Form(...),
+    ano: str = Form(...),
+    paginas: str = Form(...),
+    edicao: str = Form(...),
+    idioma: str = Form(...),
+    editora: str = Form(...),
+    isbn: str = Form(...),
+    genero1: str = Form(...),
+    genero2: str = Form(...),
+    sinopse: str = Form(...)):
+    livro = Livro(None, titulo, autor, ano, paginas, edicao, idioma, editora, isbn, genero1, genero2, sinopse)
+    livro = livro_repo.inserir_livro(livro)
+    if livro:
+        return RedirectResponse("/lar", 303)
+    else:
+        return RedirectResponse("/cadastro_livro", 303)
 
 
-#fazer rota de login com sql
+
