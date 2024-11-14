@@ -16,7 +16,7 @@ Projeto Integrador sobre criação de um site relacionado a livros como Skoob pa
 - Heloísa Schaider
 - Isac Monteiro
 - July Lemos
-- Maria Eduarda Soares
+- Maria Eduarda Soares - Mariaduda2507
 
 ## 📁 Documentação de cores
 
