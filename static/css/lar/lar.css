@@ -1,4 +1,4 @@
-:root {
+:root {  /*cria variáveis para serem usadas depois*/
     --primary-purple: #655386;
     --light-purple:#8a72b0;
     --lighter-purple:#a190c7;
@@ -15,13 +15,8 @@ body {
     padding: 0 15px;
 }
 
-.pesquisa {
-    margin-bottom: 20px;
-}
-
-.gen-carrosel, .livros-carrosel {
-    margin-bottom: 20px;
-    position: relative;
+h3 {
+    padding-top: 10px;
 }
 
 .gen-item {
@@ -33,6 +28,9 @@ body {
     cursor: pointer;
     transition: transform 0.3s;
     background-color: white;
+    border-radius: 8px;
+    width: 120px;
+    height: 120px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: 0 10px;
 }
@@ -50,12 +48,153 @@ body {
 .card-livro {
     padding: 15px;
     text-align: center;
+    padding-top: 50px;
 }
 
 .capa-livro {
-    width: 200px;
-    height: 300px;
+    width: 150px;
+    height: 200px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 10px;
+}
+
+.top-leitores {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 120px;
+    top: 20px;
+    margin-left: 20px;
+}
+
+.leitor-item {
+    display:flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--background);
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: var(--primary-purple);
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 18px;
+}
+
+.pesquisa {
+    margin-bottom: 50px;
+    
+}
+
+.clubes {
+    background-color: white;
+    border-radius: 5px;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.clube-card{
+    background-color: var(--light-purple);
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+    height: 100%;
+}
+
+.clube-card:hover{
+    transform: translateY(-5px);
+}
+
+.noticias {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0, 0.1);
+    margin-top: 50px;
+}
+
+.noticia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.noticia-card {
+    background-color: var(--background);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.resenhas-carrossel {
+    position: relative;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 50px;
+}
+
+.resenha-card {
+    background: var(--background);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: var(--primary-purple);
+    color: white;
+    padding: 40px 0;
+    margin-top: 40px;
+    height: 100%;
+}
+
+@media (max-width:768px) {
+    .gen-item {
+        width: 100px;
+        height: 100px;
+    }
+
+    .capa-livro {
+        /* width: 150px; */
+        height: 225px;
+    }
+
+    .top-leitores {
+        margin-top: 20px;
+    }
+
+    .gen-carrosel, .livros-carrosel, .clubes, .resenhas-carrossel, .noticias {
+        padding: 0 40px;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .gen-item {
+        width: 90px;
+        height: 90px;
+    }
+
+    .capa-livro {
+        /* width: 100px; */
+        height: 180px;
+    }
+
+    .gen-carrosel, .livros-carrosel, .clubes, .resenhas-carrossel, .noticias {
+        padding: 0 30px;
+    }
 }

@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block css %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<link rel="styleshet" href="/static/css/lar/lar.css">
+<link rel="stylesheet" href="/static/css/lar/lar.css">
 {% endblock %}
-{% block titulo %}Cadastro de Livros{% endblock %}
+{% block titulo %}Lar{% endblock %}
 
 {% block conteudo %}
 
@@ -75,74 +75,72 @@
                                 <span>Comédia</span>
                             </div>
                         </div>
-
-                    </div> <!--swiper wrapper--->
-                    <div class="swipper-button-next"></div>
-                    <div class="swipper-button-prev"></div>
-                </div> <!-- swiper genSwipper-->
-
-            </div> <!--gen-carrosel mb-4-->
+                    </div> 
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div> 
+            </div> 
 
             <div class="livros-carrosel mb-4">
                 <h3>Livros mais lidos</h3>
 
                 <div class="swiper livroSwiper">
                     <div class="swiper-wrapper">
-                        <div class="swipper-slide card-livro">
-                            <img src="" alt="" class="capa-livro">
+                        <div class="swiper-slide card-livro">
+                            <img src="https://img.skoob.com.br/WPrls5auAGhipMu_NervskjeeiQ=/200x/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/livros/122491264/PETALAS_DE_AKAYAMA_1724366801122491264SK-V11724366802B.jpg" alt="" class="capa-livro">
                             <h5>2Ha</h5>
                             <p>1</p>
                         </div>
 
-                        <div class="swipper-slide card-livro">
-                            <img src="" alt="" class="capa-livro">
+                        <div class="swiper-slide card-livro">
+                            <img src="https://img.skoob.com.br/WPrls5auAGhipMu_NervskjeeiQ=/200x/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/livros/122491264/PETALAS_DE_AKAYAMA_1724366801122491264SK-V11724366802B.jpg" alt="" class="capa-livro">
                             <h5>2Ha</h5>
                             <p>2</p>
                         </div>
 
-                        <div class="swipper-slide card-livro">
+                        <div class="swiper-slide card-livro">
                             <img src="" alt="" class="capa-livro">
                             <h5>2Ha</h5>
                             <p>3</p>
                         </div>
 
-                        <div class="swipper-slide card-livro">
+                        <div class="swiper-slide card-livro">
                             <img src="" alt="" class="capa-livro">
                             <h5>2Ha</h5>
                             <p>4</p>
                         </div>
 
-                        <div class="swipper-slide card-livro">
+                        <div class="swiper-slide card-livro">
                             <img src="" alt="" class="capa-livro">
                             <h5>2Ha</h5>
                             <p>5</p>
                         </div>
 
-                        <div class="swipper-slide card-livro">
+                        <div class="swiper-slide card-livro">
                             <img src="" alt="" class="capa-livro">
                             <h5>2Ha</h5>
                             <p>6</p>
                         </div>
 
-                        <div class="swipper-slide card-livro">
+                        <div class="swiper-slide card-livro">
                             <img src="" alt="" class="capa-livro">
                             <h5>2Ha</h5>
                             <p>7</p>
                         </div>
 
-                        <div class="swipper-slide card-livro">
+                        <div class="swiper-slide card-livro">
                             <img src="" alt="" class="capa-livro">
                             <h5>2Ha</h5>
                             <p>8</p>
                         </div>
 
-                        <div class="swipper-slide card-livro">
+                        <div class="swiper-slide card-livro">
                             <img src="" alt="" class="capa-livro">
                             <h5>2Ha</h5>
                             <p>9</p>
                         </div>
 
-                        <div class="swipper-slide card-livro">
+                        <div class="swiper-slide card-livro">
                             <img src="" alt="" class="capa-livro">
                             <h5>2Ha</h5>
                             <p>10</p>
@@ -156,39 +154,36 @@
             </div> <!--livros-carrosel-->
 
             <div class="clubes mb-4">
-                <h3>Clubes de Livros</h3>
+                <h3>Clubes de livros</h3>
 
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="clube-card">
-                            <h4>CLIFES</h4>
-                            <p>Clube de Literatura do IFES</p>
+                <div class="swiper clubeSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide clube-card">
+                            <div >
+                                <h5>CLIFES</h5>
+                                <p>Clube de Literatura do IFES</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="col-md-4">
-                        <div class="clube-card">
-                            <h4>Fantasia</h4>
-                            <p>Junte-se a nós na leitura de livros de fantasia</p>
+                        <div class="swiper-slide clube-card">
+                            <div>
+                                <h5>ItsMaivis - Suicidas</h5>
+                                <p>"É um pouquinho cansativo essa jogada que ele faz na linha temporal, só que ela é de grande importância para entender a história"</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="col-md-4">
-                        <div class="clube-card">
-                            <h4>Shertie</h4>
-                            <p>Venha conhecer mais livros de mistério conosco!</p>
+                        <div class="swiper-slide clube-card">
+                            <div>
+                                <h5>satatanica - Battle Royale</h5>
+                                <p>"Não se pode ser mais aterrorizantes que já nascer sem opções <br>Battle Royale correu para que Jogos Vorazes pudesse andar"</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="col-md-4">
-                        <div class="clube-card">
-                            <h4>Karma</h4>
-                            <p>Explore novos mundos e novas possibilidades!</p>
-                        </div>
                     </div>
-
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
-            </div> <!--CLUBES-->
+            </div>
 
             <div class="resenhas-carrossel mb-4">
                 <h3>Resenhas</h3>
@@ -205,7 +200,7 @@
                         <div class="swiper-slide resenha-card">
                             <div class="cont-resenha">
                                 <h5>ItsMaivis - Suicidas</h5>
-                                <p>"É um pouquinho cansativo essa jogada que ele faz na linha temporal, só que ela <br> é de grande importância para entender a história"</p>
+                                <p>"É um pouquinho cansativo essa jogada que ele faz na linha temporal, só que ela é de grande importância para entender a história"</p>
                             </div>
                         </div>
 
@@ -224,58 +219,68 @@
 
             <div class="noticias mb-4">
                 <h3>Notícias</h3>
-                <div class="noticia-grid">
-                    <div class="noticia-card">
-                        <h5>Bienal Rubem Braga</h5>
-                        <p>Como foi a Bienal deste ano que ocorreu no Sesc?</p>
-                    </div>
 
-                    <div class="noticia-card">
-                        <h5>Jogos Vorazes</h5>
-                        <p>Capa do novo livro da saga de Jogos Vorazes saiu e não teve uma aceitação boa</p>
-                    </div>
-
-                    <div class="noticia-card">
-                        <h5>Tianbao FuyaoLu</h5>
-                        <p>Lançamento aguardado do livro de Danmei chinês está previsto para fev/25 pela SevenSeas</p>
-                    </div>
-
-                </div>
-            </div> <!--noticias-->
-        </div> <!--col-lg-9-->
-
-            <div class="col-lag-3">
-                <div class="top-leitores">
-                    <h4>Top Leitores</h4>
-                    <div class="lista-leitores">
-                        <div class="leitor-item">
-                            <span class="leitor-nome">MaduHulk</span>
-                            <span class="paginas">1500 páginas</span>
+                <div class="swiper notSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide noticia-grid">
+                            <div class="noticia-card">
+                                <h5>Bienal Rubem Braga</h5>
+                                <p>Como foi a Bienal deste ano que ocorreu no Sesc?</p>
+                            </div>
                         </div>
 
-                        <div class="leitor-item">
-                            <span class="leitor-nome">MaduHulk</span>
-                            <span class="paginas">1500 páginas</span>
+                        <div class="swiper-slide noticia-grid">
+                            <div class="noticia-card">
+                                <h5>Jogos Vorazes</h5>
+                                <p>Capa do novo livro da saga de Jogos Vorazes saiu e não teve uma aceitação boa</p>
+                            </div>
                         </div>
 
-                        <div class="leitor-item">
-                            <span class="leitor-nome">MaduHulk</span>
-                            <span class="paginas">1500 páginas</span>
-                        </div>
-
-                        <div class="leitor-item">
-                            <span class="leitor-nome">MaduHulk</span>
-                            <span class="paginas">1500 páginas</span>
-                        </div>
-
-                        <div class="leitor-item">
-                            <span class="leitor-nome">MaduHulk</span>
-                            <span class="paginas">1500 páginas</span>
+                        <div class="swiper-slide noticia-grid">
+                            <div class="noticia-card">
+                                <h5>Tianbao FuyaoLu</h5>
+                                <p>Lançamento aguardado do livro de Danmei chinês está previsto para fev/25 pela SevenSeas</p>
+                            </div>
                         </div>
 
                     </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
+
+        <div class="col-lg-3">
+            <div class="top-leitores">
+                <h4>Top Leitores</h4>
+                <div class="lista-leitores">
+                    <div class="leitor-item">
+                        <span class="leitor-nome">E-Ming</span>
+                        <span class="paginas">64.392 páginas</span>
+                    </div>
+
+                    <div class="leitor-item">
+                        <span class="leitor-nome">MaduHulk</span>
+                        <span class="paginas">61.995 páginas</span>
+                    </div>
+
+                    <div class="leitor-item">
+                        <span class="leitor-nome">MaduHulk</span>
+                        <span class="paginas">1500 páginas</span>
+                    </div>
+
+                    <div class="leitor-item">
+                        <span class="leitor-nome">Isac Costa</span>
+                        <span class="paginas">3.810 páginas</span>
+                    </div>
+
+                    <div class="leitor-item">
+                        <span class="leitor-nome">Diêgo</span>
+                        <span class="paginas">3.765 páginas</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
 
         
     </div> <!--row-->
@@ -303,88 +308,9 @@
     </div>      
 </footer>
 {% endblock %}
+
 {% block script %}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<script>
-    const genSwiper = new Swiper('.genSwiper', {
-        slidesPerView: 'auto',
-        spaceBetween: 30,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-            320: {
-                slidesPerView: 2,
-                spaceBetween: 10,
-            },
-            480: {
-                slidesPerView: 3,
-                spaceBetween: 15,
-            },
-            640: {
-                slidesPerView: 4,
-                spaceBetween: 20,
-            },
-            768: {
-                slidesPerView: 5,
-                spaceBetween: 25,
-            },
-            1024: {
-                slidesPerView: 6,
-                spaceBetween: 30,
-            },
-        }
-    });
-
-    const livroSwiper = new Swiper('.livroSwiper', {
-        slidesPerView: 2,
-        spaceBetween: 20,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-            320: {
-                slidesPerView: 2,
-                spaceBetween: 10,
-            },
-            480: {
-                slidesPerView: 3,
-                spaceBetween: 15,
-            },
-            640: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-            },
-            768: {
-                slidesPerView: 4,
-                spaceBetween: 30,
-            },
-            1024: {
-                slidesPerView: 5,
-                spaceBetween: 30,
-            },
-        }
-    });
-
-    const resenhaSwiper = new Swiper('.resenhaSwiper', {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-            640: {
-                slidesPerView: 2,
-            },
-            1024: {
-                slidesPerView: 3,
-            },
-        }
-    });
-</script>
+<script src="/static/js/carrosel/lar_carrosel.js"></script>
 {% endblock %}
