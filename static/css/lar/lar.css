@@ -15,9 +15,10 @@ body {
     padding: 0 15px;
 }
 
-h3 {
-    padding-top: 10px;
-}
+/* h3 {
+    padding-top: 5px;
+    margin-bottom: 10px;
+} */
 
 .gen-item {
     display: flex;
@@ -65,8 +66,6 @@ h3 {
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-top: 120px;
-    top: 20px;
-    margin-left: 20px;
 }
 
 .leitor-item {
@@ -91,14 +90,13 @@ h3 {
 
 .pesquisa {
     margin-bottom: 50px;
-    
 }
 
 .clubes {
     background-color: white;
     border-radius: 5px;
-    padding: 30px;
-    margin-top: 20px;
+    /* padding: 20px;
+    margin-top: 10px; */
 }
 
 .clube-card{
@@ -159,7 +157,6 @@ footer {
     color: white;
     padding: 40px 0;
     margin-top: 40px;
-    height: 100%;
 }
 
 @media (max-width:768px) {
