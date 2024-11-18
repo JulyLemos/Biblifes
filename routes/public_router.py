@@ -21,6 +21,11 @@ def get_lar(request: Request):
     response = templates.TemplateResponse("lar.html", {"request": request})
     return response
 
+@router.get("/biblioteca")
+def get_lar(request: Request):
+    response = templates.TemplateResponse("biblioteca.html", {"request": request})
+    return response
+
 #rota para página de cadastro - com sql e mudando de página para alteração
 @router.get("/cadastro")
 def get_login(request: Request): #mudar depois

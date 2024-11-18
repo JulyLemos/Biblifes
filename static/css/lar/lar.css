@@ -94,9 +94,10 @@ body {
 
 .clubes {
     background-color: white;
-    border-radius: 5px;
-    /* padding: 20px;
-    margin-top: 10px; */
+    border-radius: 8px;
+    margin-top: 50px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .clube-card{
