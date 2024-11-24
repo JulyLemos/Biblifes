@@ -12,7 +12,7 @@ Projeto Integrador sobre criação de um site relacionado a livros como Skoob pa
 
 ## Grupo 💫 
 
-- Diêgo Cavalcante
+- Diêgo Cavalcante - Die5go
 - Heloísa Schaider
 - Isac Monteiro
 - July Lemos
