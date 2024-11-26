@@ -1,0 +1,111 @@
+/*
+
+.t1l {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    background-color: #a190c7;
+}
+
+.t3l {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+} 
+
+.table-livros th,
+.table-livros td {
+    vertical-align: middle;
+    white-space: nowrap;
+    text-align: center;
+    padding: 5px 10px;
+}
+
+.table-livros th:nth-of-type(2),
+.table-livros td:nth-of-type(2) {
+    text-align: left;
+    width: auto;
+} */
+
+:root {
+    --primary-purple: #655386;
+    --light-purple: #8a72b0;
+    --lighter-purple: #a190c7;
+    --background: #DEE1ED;
+}
+
+.titulo { 
+    font-size: 2.5rem;
+    color: var(--primary-purple);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: center !important; 
+}
+
+.table-livros {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table-livros th,
+.table-livros td {
+    vertical-align: middle;
+    text-align: center;
+    padding: 12px 15px;
+    font-size: 0.9rem;
+}
+
+.table-livros th:nth-of-type(2),
+.table-livros td:nth-of-type(2) {
+    text-align: left;
+    width: auto;
+}
+
+.table-livros tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.h-120 {
+    height: 120px !important;
+    width: 80px !important;
+    border-radius: 4px;
+}
+
+.btn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/*botão de cadastrar livro*/
+.btn-primary {
+    background-color: var(--light-purple);
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-purple);
+}
+/**/
+
+/*cores dos botões de alterar e excluir*/
+.btn-outline-success,
+.btn-outline-danger {
+    background-color: var(--light-purple);
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}

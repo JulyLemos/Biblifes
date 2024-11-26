@@ -1,16 +1,18 @@
 {% extends "base.html" %}
-{% block css %}<link rel="stylesheet" href="/static/css/admin/estilo.css">{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="/static/css/admin/index/estilo.css">
+{% endblock %}
 {% block titulo %}Administração de Livros{% endblock %}
 {% block conteudo %}
-<div class="d-flex justify-content-between align-items-center">
-    <h1>Administração de Livros</h1>
-    <a href="/admin/cadastro_livro" class="btn btn-primary">Cadastrar Livro</a>
+
+<div class="titulo">
+    <h1 >Administração de Livros</h1>
 </div>
-<hr>
+
 <table class="table table-striped table-hover table-sm table-livros">
     <thead>
         <tr>
-            <th class="px-3">Foto</th>
+            <th>Foto</th>
             <th>Título</th>
             <th>Autor</th>
             <th>Ano</th>
