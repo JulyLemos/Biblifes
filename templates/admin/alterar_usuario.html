@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block titulo %}Alteração de Usuario{% endblock %}
+{% block conteudo %}
+<h1>Alteração de Usuario</h1>
+<hr>
+<form method="post" class="row" action="/admin/alterar_usuario/{{ usuario.id }}">
+    <div class="col-6">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="matricula" id="matricula" placeholder=" " value="{{usuario.matricula}}"/>
+            <label for="matricula">Matricula</label>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="senha" id="senha" placeholder=" " value="{{usuario.senha}}"/>
+            <label for="senha">Senha</label>
+        </div>
+    </div>
+    <div class="col-6">
+        <a href="/admin/index_usuario" class="btn btn-secondary">Cancelar</a>
+        <button type="submit" class="btn btn-primary">
+            Salvar
+        </button>
+    </div>
+</form>
+{% endblock %}

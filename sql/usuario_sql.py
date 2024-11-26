@@ -23,6 +23,12 @@ SQL_EXCLUIR_USUARIO = """
     WHERE id=?
 """
 
+SQL_OBTER_USUARIO_POR_ID = """
+    SELECT id, matricula, senha
+    FROM usuario
+    WHERE id=?
+"""
+
 SQL_OBTER_TODOS_USUARIO = """
     SELECT id, matricula, senha
     FROM usuario

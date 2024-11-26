@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block titulo %}Alteração de Livro{% endblock %}
+{% block conteudo %}
+<h1>Alteração de Livro</h1>
+<hr>
+<form method="post" class="row">
+    <div class="col-12">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="titulo" id="titulo" placeholder=" " value="{{livro.titulo}}"/>
+            <label for="titulo">Título</label>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="autor" id="autor" placeholder=" " value="{{livro.autor}}"/>
+            <label for="autor">Autor</label>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="ano" id="ano" placeholder=" " value="{{livro.ano}}"/>
+            <label for="ano">Ano</label>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="paginas" id="paginas" placeholder=" " value="{{livro.paginas}}"/>
+            <label for="paginas">Páginas</label>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="edicao" id="edicao" placeholder=" " value="{{livro.edicao}}"/>
+            <label for="edicao">Edição</label>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="idioma" id="idioma" placeholder=" " value="{{livro.idioma}}"/>
+            <label for="idioma">Idioma</label>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="editora" id="editora" placeholder=" " value="{{livro.editora}}"/>
+            <label for="editora">Editora</label>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="isbn" id="isbn" placeholder=" " value="{{livro.isbn}}"/>
+            <label for="isbn">ISBN</label>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="genero1" id="genero1" placeholder=" " value="{{livro.genero1}}"/>
+            <label for="genero1">Gênero 1</label>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="genero2" id="genero2" placeholder=" " value="{{livro.genero2}}"/>
+            <label for="genero2">Gênero 2</label>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="form-floating mb-3">
+            <textarea class="form-control h-120" placeholder=" " name="sinopse" id="sinopse">{{livro.sinopse}}</textarea>
+            <label for="sinopse">Sinopse</label>
+        </div>
+    </div>
+    
+    <div class="col-6">
+        <a href="/admin" class="btn btn-secondary">Cancelar</a>
+        <button type="submit" class="btn btn-primary">
+            Salvar
+        </button>
+    </div>
+</form>
+{% endblock %}

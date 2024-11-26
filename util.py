@@ -1,7 +1,5 @@
 import sqlite3
 
-from sql.livro_sql import SQL_OBTER_POR_ID
-
 NOME_PASTA_HTML= "html/"
 
 def ler_html(nome_arquivo: str) -> str:

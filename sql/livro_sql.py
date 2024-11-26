@@ -31,8 +31,8 @@ SQL_EXCLUIR_LIVRO = """
     DELETE FROM livros
     WHERE id=?
 """
-SQL_OBTER_POR_ID = """
-    SELECT titulo, autor, ano, paginas, edicao, idioma, editora, isbn, genero1, genero2, sinopse
+SQL_OBTER_LIVRO_POR_ID = """
+    SELECT id, titulo, autor, ano, paginas, edicao, idioma, editora, isbn, genero1, genero2, sinopse
     FROM livros
     WHERE id=?
 """

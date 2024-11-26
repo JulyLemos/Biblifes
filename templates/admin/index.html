@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block css %}<link rel="stylesheet" href="/static/css/admin/estilo.css">{% endblock %}
+{% block titulo %}Administração de Livros{% endblock %}
+{% block conteudo %}
+<div class="d-flex justify-content-between align-items-center">
+    <h1>Administração de Livros</h1>
+    <a href="/admin/cadastro_livro" class="btn btn-primary">Cadastrar Livro</a>
+</div>
+<hr>
+<table class="table table-striped table-hover table-sm table-livros">
+    <thead>
+        <tr>
+            <th class="px-3">Foto</th>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Ano</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for l in livros %}
+        <tr>
+            <td>
+                <img src="/static/img/livros/{{'{:06d}'.format(l.id)}}.jpg" alt="{{l.titulo}}" class="img-thumbnail h-120">
+            </td>
+            <div class="linha-livros">
+                <td>{{l.titulo}}</td>
+                <td>{{l.autor}}</td>
+                <td>{{l.ano}}</td>
+                <td>
+                    <a href="/admin/alterar_livro/{{l.id}}" class="btn btn-outline-success">
+                        <i class="bi bi-pen"></i>
+                    </a>
+                    <a href="/admin/excluir_livro/{{l.id}}" class="btn btn-outline-danger">
+                        <i class="bi bi-trash"></i>
+                    </a>
+                </td>
+            </div>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

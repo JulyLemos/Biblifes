@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from typing import Optional
 
 @dataclass
-class Livro:
+class LivroModel:
     id: Optional[int] = None
     titulo: Optional[str] = None
     autor: Optional[str] = None
