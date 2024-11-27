@@ -25,7 +25,7 @@
             <span><a href="{{ url_for('biblioteca') }}">Biblioteca</a></span>
         </div>
         <div class="icon">
-            <a href="cadastro"><i class="bi bi-person-circle perfil"></i></a>
+            <a href="{{ url_for('cadastro') }}"><i class="bi bi-person-circle perfil"></i></a>
         </div>
     </header>
 
@@ -36,6 +36,8 @@
                 <li><a href="/">Clubes</a></li>
                 <li><a href="/">Sorteio</a></li>
                 <li><a href="/">Configurações</a></li>
+                <li><a href="/admin/">Adm. Livros</a></li>
+                <li><a href="/admin/index_usuario">Adm. Usuários</a></li>
             </ul>
         </nav>
     </div>
