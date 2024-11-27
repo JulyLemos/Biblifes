@@ -16,12 +16,12 @@ def get_root(request: Request):
     return response #vai retornar o response que contém o  template jinja com a página html
 
 #rota para página lar
-@router.get("/lar")
+@router.get("/lar", name="lar")
 def get_lar(request: Request):
     response = templates.TemplateResponse("lar.html", {"request": request})
     return response
 
-@router.get("/biblioteca")
+@router.get("/biblioteca", name="biblioteca")
 def get_lar(request: Request):
     response = templates.TemplateResponse("biblioteca.html", {"request": request})
     return response
