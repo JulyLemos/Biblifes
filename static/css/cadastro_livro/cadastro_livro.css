@@ -21,6 +21,10 @@ form > div.um{
     border-radius: 5px;
 }
 
+form > div.dois {
+    align-items: center;
+}
+
 /*botão*/
 button {
     padding: 10px;
