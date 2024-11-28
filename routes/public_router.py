@@ -23,7 +23,8 @@ def get_lar(request: Request):
 
 @router.get("/biblioteca", name="biblioteca")
 def get_lar(request: Request):
-    response = templates.TemplateResponse("biblioteca.html", {"request": request})
+    livros = livro_repo.LivroRepo.obter_todos_livro()
+    response = templates.TemplateResponse("biblioteca.html", {"request": request, "livros": livros})
     return response
 
 #rota para página de cadastro - com sql e mudando de página para alteração

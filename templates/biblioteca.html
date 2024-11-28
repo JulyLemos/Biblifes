@@ -1,19 +1,36 @@
 {% extends "base.html" %}
 {% block titulo %}Biblioteca{% endblock %}
 {% block conteudo %}
-
-<div>
-    <div>
-        <div>
-            <h3>Carrosel</h3>
+<div class="container">
+    <div class="row">
+        <div class="pesquisa">
+            <input type="text" class="form-control" placeholder="Livros, autores, usuários...">
         </div>
-        <div>
-            <h3>Filtro</h3>
+        <div class="col-md-3">
+            <h3>Filtros</h3>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action">Gênero</a>
+                <a href="#" class="list-group-item list-group-item-action">Autor</a>
+                <a href="#" class="list-group-item list-group-item-action">Ano</a>
+            </div>
         </div>
-        <div>
-            <h3>Livros</h3>
+        <div class="col-md-9">
+            <h2>Livros</h2>
+            <div class="row">
+                {% for livro in livros %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="/static/img/livros/{{'{:06d}'.format(livro.id)}}.jpg" alt="{{livro.titulo}}" class="img-thumbnail h-120">
+                            <!-- <div class="card-body">
+                                <h5 class="card-title">{{ livro.titulo }}</h5>
+                                <p class="card-text">{{ livro.autor }}</p>
+                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                            </div> -->
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </div>
-
 {% endblock %}
