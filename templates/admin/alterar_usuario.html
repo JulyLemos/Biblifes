@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block titulo %}Alteração de Usuario{% endblock %}
 {% block css %}
-<link rel="stylesheet" href="/static/css/cadastro_livro/cadastro_livro.css">
+<link rel="stylesheet" href="/static/css/admin/alteração/alterar_usuario.css">
 {% endblock %}
 {% block conteudo %}
 
@@ -11,7 +11,7 @@
     <div class="um">
         <div class="row">
             <div class="col">
-                <div class="form-floating mb-3">
+                <div class="form-floating mb-3 gx-1">
                     <input type="text" class="form-control" name="matricula" id="matricula" placeholder=" " value="{{usuario.matricula}}"/>
                     <label for="matricula">Matricula</label>
                 </div>
@@ -20,7 +20,7 @@
 
         <div class="row">
             <div class="col">
-                <div class="form-floating mb-3">
+                <div class="form-floating mb-3 gx-1">
                     <input type="text" class="form-control" name="senha" id="senha" placeholder=" " value="{{usuario.senha}}"/>
                     <label for="senha">Senha</label>
                 </div>

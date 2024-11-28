@@ -1,9 +1,15 @@
 {% extends "base.html" %}
+{% block css %}
+<link rel="stylesheet" href="/static/css/admin/excluir/excluir.css">
+{% endblock %}
 {% block titulo %}Exclusão de Livro{% endblock %}
 {% block conteudo %}
-<h1>Exclusão de Livro</h1>
-<hr>
+
+
 <form method="post" class="row" action="/admin/excluir_livro">
+
+    <h1>Exclusão de Livro</h1>
+    
     <input type="hidden" name="id" value="{{livro.id}}">
     <p class="lead">Deseja realmente excluir o livro <b>{{livro.titulo}}</b>?</p>
     <div class="col-6">
@@ -13,4 +19,5 @@
         </button>
     </div>
 </form>
+
 {% endblock %}

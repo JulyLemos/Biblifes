@@ -1,9 +1,14 @@
 {% extends "base.html" %}
+{% block css %}
+<link rel="stylesheet" href="/static/css/admin/excluir/excluir.css">
+{% endblock %}
 {% block titulo %}Exclusão de Usuario{% endblock %}
 {% block conteudo %}
-<h1>Exclusão de Usuario</h1>
-<hr>
+
 <form method="post" class="row" action="/admin/excluir_usuario">
+
+    <h1>Exclusão de Usuario</h1>
+
     <input type="hidden" name="id" value="{{usuario.id}}">
     <p class="lead">Deseja realmente excluir o usuario <b>{{ usuario.matricula }}</b>?</p>
     <div class="col-6">
@@ -13,4 +18,5 @@
         </button>
     </div>
 </form>
+
 {% endblock %}
