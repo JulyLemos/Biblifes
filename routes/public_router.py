@@ -50,30 +50,3 @@ def post_cadastro(
     else:
         return RedirectResponse("/cadastro", 303)
     
-# @router.get("/cadastro_livro")
-# def get_cadastro_livro(request: Request):
-#     response = templates.TemplateResponse("cadastro_livro.html", {"request": request})
-#     return response
-
-# @router.post("/post_cadastro_livro")
-# def post_cadastro_livro(
-#     titulo: str = Form(...),
-#     autor: str = Form(...),
-#     ano: str = Form(...),
-#     paginas: str = Form(...),
-#     edicao: str = Form(...),
-#     idioma: str = Form(...),
-#     editora: str = Form(...),
-#     isbn: str = Form(...),
-#     genero1: str = Form(...),
-#     genero2: str = Form(...),
-#     sinopse: str = Form(...)):
-#     livro = Livro(None, titulo, autor, ano, paginas, edicao, idioma, editora, isbn, genero1, genero2, sinopse)
-#     livro = livro_repo.inserir_livro(livro)
-#     if livro:
-#         return RedirectResponse("/lar", 303)
-#     else:
-#         return RedirectResponse("/cadastro_livro", 303)
-
-
-

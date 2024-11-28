@@ -1,26 +1,43 @@
 {% extends "base.html" %}
 {% block titulo %}Alteração de Usuario{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="/static/css/cadastro_livro/cadastro_livro.css">
+{% endblock %}
 {% block conteudo %}
-<h1>Alteração de Usuario</h1>
-<hr>
-<form method="post" class="row" action="/admin/alterar_usuario/{{ usuario.id }}">
-    <div class="col-6">
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" name="matricula" id="matricula" placeholder=" " value="{{usuario.matricula}}"/>
-            <label for="matricula">Matricula</label>
+
+<form method="post" action="/admin/alterar_usuario/{{ usuario.id }}">
+    <h1>Alteração de Usuario</h1>
+
+    <div class="um">
+        <div class="row">
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="matricula" id="matricula" placeholder=" " value="{{usuario.matricula}}"/>
+                    <label for="matricula">Matricula</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="senha" id="senha" placeholder=" " value="{{usuario.senha}}"/>
+                    <label for="senha">Senha</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row dois">
+            <div class="col">
+                <button class="enviar">
+                    <a href="/admin/index_usuario" style="color:rgb(89, 89, 89);" onmouseover="this.style.color = 'white'" onmouseleave="this.style.color= 'rgb(89, 89, 89)'">Cancelar</a>
+                </button>
+                <button type="submit" class="enviar">
+                    Salvar
+                </button>
+            </div>
         </div>
     </div>
-    <div class="col-6">
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" name="senha" id="senha" placeholder=" " value="{{usuario.senha}}"/>
-            <label for="senha">Senha</label>
-        </div>
-    </div>
-    <div class="col-6">
-        <a href="/admin/index_usuario" class="btn btn-secondary">Cancelar</a>
-        <button type="submit" class="btn btn-primary">
-            Salvar
-        </button>
-    </div>
+
 </form>
 {% endblock %}
