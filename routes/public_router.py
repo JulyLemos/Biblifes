@@ -30,12 +30,12 @@ def get_lar(request: Request):
 #rota para página de cadastro - com sql e mudando de página para alteração
 @router.get("/cadastro", name="cadastro")
 def get_login(request: Request):
-    response = templates.TemplateResponse("estante.html", {"request": request})
+    response = templates.TemplateResponse("cadastro.html", {"request": request})
     return response
 
-@router.get("/estante", name="cestante")
+@router.get("/estante", name="estante")
 def get_login(request: Request): 
-    response = templates.TemplateResponse("cadastro.html", {"request": request})
+    response = templates.TemplateResponse("estante.html", {"request": request})
     return response
 
 
