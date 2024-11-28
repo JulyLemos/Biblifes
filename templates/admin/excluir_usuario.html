@@ -5,18 +5,23 @@
 {% block titulo %}Exclusão de Usuario{% endblock %}
 {% block conteudo %}
 
-<form method="post" class="row" action="/admin/excluir_usuario">
+<div class="popup-overlay">
+    <div class="popup-container">
 
-    <h1>Exclusão de Usuario</h1>
+        <form method="post" class="row" action="/admin/excluir_usuario">
 
-    <input type="hidden" name="id" value="{{usuario.id}}">
-    <p class="lead">Deseja realmente excluir o usuario <b>{{ usuario.matricula }}</b>?</p>
-    <div class="col-6">
-        <a href="/admin/index_usuario" class="btn btn-secondary">Não</a>
-        <button type="submit" class="btn btn-danger">
-            Sim
-        </button>
+            <h2>Exclusão de Usuario</h2>
+
+            <input type="hidden" name="id" value="{{usuario.id}}">
+            <p class="lead">Deseja realmente excluir o usuario <b>{{ usuario.matricula }}</b>?</p>
+            <div class="buttons">
+                <a href="/admin/index_usuario" class="btn btn-secondary">Não</a>
+                <button type="submit" class="btn btn-danger">
+                    Sim
+                </button>
+            </div>
+        </form>
     </div>
-</form>
+</div>
 
 {% endblock %}

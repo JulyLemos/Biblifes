@@ -83,3 +83,13 @@
 .mb-4 {
     margin-bottom: 1.5rem;
 }
+
+.pesquisa input {  /*campo de pesquisa*/
+    padding: 10px 20px;
+    width: 400px;
+    border: none;
+    border-radius: 20px;
+    background-color: #d3d3d3;
+    margin: 0 auto;
+    margin-bottom: 50px;
+} 
