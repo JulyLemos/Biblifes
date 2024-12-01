@@ -1,9 +1,4 @@
-:root {
-    --primary-purple: #655386;
-    --light-purple: #8a72b0;
-    --lighter-purple: #a190c7;
-    --background: #DEE1ED;
-}
+@import url("/static/css/cores/cores.css");
 
 .titulo { 
     font-size: 2.5rem;

@@ -1,9 +1,4 @@
-:root {  /*cria variáveis para serem usadas depois*/
-    --primary-purple: #655386;
-    --light-purple:#8a72b0;
-    --lighter-purple:#a190c7;
-    --background:#DEE1ED;
-}
+@import url("/static/css/cores/cores.css");
 
 body {
     background-color: var(--background);

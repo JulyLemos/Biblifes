@@ -16,9 +16,12 @@ class UsuarioRepo:
         with obter_conexao() as conexao:
             db = conexao.cursor()
             db.execute(SQL_INSERIR_USUARIO, 
-            (usuario.matricula, 
-            usuario.senha,
-            usuario.perfil,))
+            (
+                usuario.matricula, 
+                usuario.senha,
+                usuario.perfil,
+                ),
+            )
         if db.rowcount == 0:
                 return None
         usuario.id = db.lastrowid

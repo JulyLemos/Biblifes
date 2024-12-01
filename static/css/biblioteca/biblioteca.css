@@ -1,10 +1,4 @@
-:root {
-    --primary-purple: #655386;
-    --light-purple: #8a72b0;
-    --lighter-purple: #a190c7;
-    --background: #DEE1ED;
-    --filtro: #d3d3d3;
-}
+@import url("/static/css/cores/cores.css");
 
 .container {
     padding: 20px;

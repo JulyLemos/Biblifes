@@ -23,7 +23,7 @@
             <div class="linha"></div>
         </div>
         <div class="txtcent">
-            <span><a href="#">Estante</a></span>
+            <span><a href="/estante">Estante</a></span>
             <span><a href="{{ url_for('lar') }}">Lar</a></span>
             <span><a href="{{ url_for('biblioteca') }}">Biblioteca</a></span>
         </div>
@@ -50,7 +50,7 @@
                 <li><a href="/admin/cadastro_livro">Adicionar livro</a></li>
                 <li><a href="/">Clubes</a></li>
                 <li><a href="/">Sorteio</a></li>
-                <li><a href="/">Configurações</a></li>
+                <li><a href="/conf">Configurações</a></li>
                 {% if autenticado and usuario["perfil"] == 2 %}
                 <li><a href="/admin/">Adm. Livros</a></li>
                 <li><a href="/admin/index_usuario">Adm. Usuários</a></li>

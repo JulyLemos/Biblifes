@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block css %}
+<link rel="stylesheet" href="/static/css/estante/estante.css">
+{% endblock %}
+{% block titulo %}Estante{% endblock %}
+{% block conteudo %}
+
+<div class="container">
+    <ul class="nav nav-tabs" id="tablivros">
+        <li class="nav-item">
+            <a class="nav-link active" href="#todos" data-bs-toggle="tab"> <!--liga o elemento ao tipo correspondente, reafirma o que ele é-->
+                <i class="bi bi-bookmarks-fill" style="color:#8A2BE2;"></i> Todos 
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#lidos" data-bs-toggle="tab">
+                <i class="bi bi-bookmark-fill" style="color: #28a745;"></i> Lidos 
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#lendo" data-bs-toggle="tab">
+                <i class="bi bi-book" style="color:#F7FE1D;"></i>Lendo
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#qrler" data-bs-toggle="tab">
+                <i class="bi bi-bookmark" style="color:#4169E1;"></i> Quero Ler 
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#relendo" data-bs-toggle="tab">
+                <i class="bi bi-arrow-repeat" style="color:#f9b63b;"></i> Relendo 
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#abandonados" data-bs-toggle="tab">
+                <i class="bi bi-bookmark-dash" style="color:black;"></i>Abandonados 
+            </a>
+        </li>
+        <li>
+            <a class="nav-link" href="#favoritos" data-bs-toggle="tab">
+                <i class="bi bi-bookmark-heart" style="color:#8B0000;"></i>Favoritos 
+            </a>
+        </li>
+        <li>
+            <a class="nav-link" href="#tenho" data-bs-toggle="tab">
+                <i class="bi bi-bookmark-check" style="color:#BC8F8F;"></i>Tenho 
+            </a>
+        </li>
+    </ul>
+
+    <div class="cont-tab">
+        <div class="tab-pane fade show active" id="todos">
+            <div class="livro-grid" id="todosGrid"></div>
+        </div>
+        <div class="tab-pane fade" id="lidos">
+            <div class="livro-grid" id="lidosGrid"></div>
+        </div>
+        <div class="tab-pane fade" id="lendo">
+            <div class="livro-grid" id="lendoGrid"></div>
+        </div>
+        <div class="tab-pane fade" id="qrler">
+            <div class="livro-grid" id="qrlerGrid"></div>
+        </div>
+        <div class="tab-pane fade" id="relendo">
+            <div class="livro-grid" id="relendoGrid"></div>
+        </div>
+        <div class="tab-pane fade" id="abandonados">
+            <div class="livro-grid" id="abandonadosGrid"></div>
+        </div>
+        <div class="tab-pane fade" id="favoritos">
+            <div class="livro-grid" id="favoritosGrid"></div>
+        </div>
+        <div class="tab-pane fade" id="tenho">
+            <div class="livro-grid" id="tenhoGrid"></div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+{% block script %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}
