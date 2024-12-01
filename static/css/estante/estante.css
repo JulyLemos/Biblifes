@@ -21,10 +21,6 @@
     margin-right: 5px;
 }
 
-.nav-link.active {
-    font-weight: bold;
-}
-
 .livro-grid {
     display: grid;
     grid-template-columns: repeat(autofill, minmax(100px, 1fr));
