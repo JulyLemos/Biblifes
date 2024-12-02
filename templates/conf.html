@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block css %}
+<link rel="stylesheet" href="/static/css/configuracao/configuracao.css">
+{% endblock %}
+{% block titulo %}Configurações{% endblock %}
+{% block conteudo %}
+
+<div class="container">
+    <h1 class="titulo">Configurações</h1>
+
+    <div class="config-grid">
+        <div class="config-card">
+            <div class="card-titulo">
+                <i class="bi bi-person-circle"></i>
+                <span>Sua conta</span>
+            </div>
+            <div class="config-cont">
+                <ul>
+                    <li>Nome de usuário</li>
+                    <li>E-mail</li>
+                    <li>Senha</li>
+                    <li>Idioma</li>
+                    <li>Aniversário</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="config-card">
+            <div class="card-titulo">
+                <i class="bi bi-palette"></i>
+                <span>Temas</span>
+            </div>
+            <div class="config-cont">
+                <ul>
+                    <li>Tema do computador</li>
+                    <li>Modo escuro</li>
+                    <li>Modo claro</li>
+                    <li>Sugestões</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="config-card">
+            <div class="card-titulo">
+                <i class="bi bi-file-text"></i>
+                <span>Biografia</span>
+            </div>
+            <div class="config-cont">
+                <ul>
+                    <li>Editar biografia</li>
+                    <li>Adicionar frase</li>
+                    <li>excluir biografia</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="config-card">
+            <div class="card-titulo">
+                <i class="bi bi-geo-alt"></i>
+                <span>Endereço</span>
+            </div>
+            <div class="config-cont">
+                <ul>
+                    <li>Endereço residencial</li>
+                    <li>Endereço de trabalho</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="config-card">
+            <div class="card-titulo">
+                <i class="bi bi-bell"></i>
+                <span>Notificações</span>
+            </div>
+            <div class="config-cont">
+                <ul>
+                    <li>Notificação por email</li>
+                    <li>Som de notificação</li>
+                    <li>Tipos de notificações</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="config-card">
+            <div class="card-titulo">
+                <i class="bi bi-gear"></i>
+                <span>Gerenciar Perfil</span>
+            </div>
+            <div class="config-cont">
+                <ul>
+                    <li>Excluir perfil</li>
+                    <li>Arquivar perfil</li>
+                    <li>Adicionar conta</li>
+                    <li>Trocar de conta</li>
+                    <li>Trazer informações</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}

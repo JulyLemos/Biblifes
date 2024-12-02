@@ -1,0 +1,60 @@
+@import url("/static/css/cores/cores.css");
+
+.titulo {
+    text-align: center;
+    color: var(--primary-purple);
+    margin: 50px;
+    font-size: 45px;
+}
+
+.config-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.config-card {
+    background-color: var(--filtro);
+    border-radius: 10px;
+    padding: 20px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-titulo {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--primary-purple);
+    margin-bottom: 20px;
+    /* display: flex; */
+    align-items: center;
+}
+
+.card-titulo i {
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+.config-cont ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.config-cont li {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .config-grid {
+        grid-template-columns: 1fr;
+    }
+}

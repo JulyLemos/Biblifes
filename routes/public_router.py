@@ -22,15 +22,23 @@ def get_lar(request: Request):
     response = templates.TemplateResponse("lar.html", {"request": request})
     return response
 
+#rota para a biblioteca do sistema, com todos os livros cadastrados
 @router.get("/biblioteca", name="biblioteca")
 def get_lar(request: Request):
     livros = LivroRepo.obter_todos_livro()
     response = templates.TemplateResponse("biblioteca.html", {"request": request, "livros": livros})
     return response
 
+#rota para a página de estante do usuário
 @router.get("/estante", name="estante")
 def get_login(request: Request): 
     response = templates.TemplateResponse("estante.html", {"request": request})
+    return response
+
+#rota para as configurações, seja de conta ou do comportamento do site
+@router.get("/conf")
+def get_configuracao(request: Request):
+    response = templates.TemplateResponse("conf.html", {"request": request})
     return response
 
 #rota para página de cadastro - com sql e mudando de página para alteração
@@ -68,7 +76,7 @@ def post_entrar(
     matricula: str = Form(),
     senha: str = Form()):
     senha_hash = UsuarioRepo.obter_senha_por_matricula(matricula)
-    # se não encontrou senha para o e-mail, 
+    # se não encontrou senha para a matrícula 
     # é porque não está cadastrado
     if not senha_hash:
         response = RedirectResponse("/login", 303)

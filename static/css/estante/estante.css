@@ -1,0 +1,29 @@
+@import url("/static/css/cores/cores.css");
+
+.container {
+    margin-top: 50px;
+}
+
+.nav-tabs {
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.nav-link{
+    color: #333;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.nav-link i {
+    margin-right: 5px;
+}
+
+.livro-grid {
+    display: grid;
+    grid-template-columns: repeat(autofill, minmax(100px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
