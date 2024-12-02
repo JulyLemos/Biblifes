@@ -1,4 +1,4 @@
-SQL_CRIAR_TABELA_USUARIO = """
+SQL_CRIAR_TABELA = """
     CREATE TABLE IF NOT EXISTS usuario (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         matricula TEXT NOT NULL,
@@ -6,16 +6,9 @@ SQL_CRIAR_TABELA_USUARIO = """
     )
 """
 
-SQL_INSERIR_USUARIO = """
-    INSERT INTO usuario (
-        matricula, senha)
+SQL_INSERIR = """
+    INSERT INTO usuario (matricula, senha)
     VALUES (?, ?)
-"""
-
-SQL_ALTERAR_USUARIO = """
-    UPDATE usuario SET
-    matricula=?, senha=?
-    WHERE id=?
 """
 
 SQL_OBTER_SENHA_POR_MATRICULA = """
@@ -24,24 +17,36 @@ SQL_OBTER_SENHA_POR_MATRICULA = """
     WHERE matricula = ?
 """
 
-SQL_OBTER_DADOS_POR_MATRICULA = """
+SQL_OBTER_DADOS_POR_MATRICULA= """
     SELECT id, matricula
     FROM usuario
     WHERE matricula = ?
 """
 
-SQL_EXCLUIR_USUARIO = """
-    DELETE FROM usuario
-    WHERE id=?
-"""
-
-SQL_OBTER_USUARIO_POR_ID = """
-    SELECT id, matricula, senha
+SQL_OBTER_POR_ID = """
+    SELECT id, matricula
     FROM usuario
-    WHERE id=?
+    WHERE id = ?
 """
 
-SQL_OBTER_TODOS_USUARIO = """
+SQL_ATUALIZAR_DADOS = """
+    UPDATE usuario
+    SET matricula = ?
+    WHERE id = ?
+"""
+
+SQL_ATUALIZAR_SENHA = """
+    UPDATE usuario
+    SET senha = ?
+    WHERE id = ?
+"""
+
+SQL_EXCLUIR = """
+    DELETE FROM usuario
+    WHERE id = ?
+"""
+
+SQL_OBTER_TODOS = """
     SELECT id, matricula, senha
     FROM usuario
     ORDER BY matricula

@@ -1,3 +1,5 @@
+{% set autenticado = "usuario" in request.session %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -25,10 +27,16 @@
             <span><a href="{{ url_for('biblioteca') }}">Biblioteca</a></span>
         </div>
         <div class="icon">
-            <a href="{{ url_for('cadastro') }}"><i class="bi bi-person-circle perfil"></i></a>
+            {% if autenticado: %}
+            <span><a href="{{ url_for('sair') }}"><i class="bi bi-box-arrow-right"></i></a></span>
+            {% else: %}
+            <span><a href="{{ url_for('login') }}"><i class="bi bi-person-circle perfil"></i></a></span>
+            {% endif %}
         </div>
+        <!-- <div class="icon">
+            <a href="{{ url_for('cadastro') }}"><i class="bi bi-person-circle perfil"></i></a>
+        </div> -->
     </header>
-
     <div id="sidebar" class="sidebar">
         <nav>
             <ul>
@@ -36,15 +44,23 @@
                 <li><a href="/">Clubes</a></li>
                 <li><a href="/">Sorteio</a></li>
                 <li><a href="/conf">Configurações</a></li>
+                {% if autenticado: %}
                 <li><a href="/admin/">Adm. Livros</a></li>
                 <li><a href="/admin/usuarios">Adm. Usuários</a></li>
+                {% endif %}
             </ul>
         </nav>
     </div>
 
     <div class="overlay" id="overlay"></div>
 
-    {% block conteudo %}
+    <main class="container flex-fill">
+        {% include "includes/mensagem.html" with context %}
+        {% block conteudo %}
+        {% endblock %}
+    </main>
+
+    {% block footer %}
     {% endblock %}
 
     <!--Corpo da página-->
@@ -57,5 +73,5 @@
 <script src="/static/js/star/star.js"></script>
 <script src="/static/js/menu/menu.js"></script>
 {% block script %}
-{% endblock %}
+{% endblock %}
 </html>

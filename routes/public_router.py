@@ -1,12 +1,12 @@
 import bcrypt
-from fastapi import APIRouter, Form, Request
+from fastapi import APIRouter, Form, Path, Request
 from fastapi.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
 
-from models.usuario_model import UsuarioModel
+from models.usuario_model import Usuario
 from repositories.livro_repo import LivroRepo
 from repositories.usuario_repo import UsuarioRepo
-from utils.mensagens import *
+from util.mensagens import *
 
 router = APIRouter()
 templates = Jinja2Templates(directory="templates")
@@ -29,6 +29,13 @@ def get_lar(request: Request):
     response = templates.TemplateResponse("biblioteca.html", {"request": request, "livros": livros})
     return response
 
+@router.get("/livro/{id}")
+def get_livro(request: Request, id: int = Path(...)):
+    livro = LivroRepo.obter_livro_por_id(id)
+    response = templates.TemplateResponse(
+        "/livro.html", {"request": request, "l": livro})
+    return response
+
 #rota para a página de estante do usuário
 @router.get("/estante", name="estante")
 def get_login(request: Request): 
@@ -41,42 +48,19 @@ def get_configuracao(request: Request):
     response = templates.TemplateResponse("conf.html", {"request": request})
     return response
 
-#rota para página de cadastro - com sql e mudando de página para alteração
-@router.get("/cadastro", name="cadastro")
+@router.get("/login", name="login")
 def get_login(request: Request):
-    response = templates.TemplateResponse("cadastro.html", {"request": request})
-    return response
-
-@router.post("/post_cadastro")
-def post_cadastro(
-    request: Request,
-    matricula: str = Form(...),
-    senha: str = Form(...)):
-    senha_hash = bcrypt.hashpw(senha.encode(), bcrypt.gensalt())
-    novo_usuario = UsuarioModel(None, matricula, senha_hash.decode())
-    novo_usuario = UsuarioRepo.inserir_usuario(novo_usuario)
-    if novo_usuario:
-        response = RedirectResponse("/", 303)
-        adicionar_mensagem_sucesso(response, "Cadastro realizado com sucesso! Use suas credenciais para entrar.")
-        return response
-    else:
-        response = RedirectResponse("/cadastro", 303)
-        adicionar_mensagem_erro(response, "Ocorreu algum problema ao tentar realizar seu cadastro. Tente novamente.")
-        return response
-
-#rota para página de login - com validação e voltando para página inicial
-@router.get("/login")
-def get_login(request: Request): #mudar depois
-    response = templates.TemplateResponse("login.html", {"request": request})
+    response = templates.TemplateResponse(
+        "login.html", {"request": request})
     return response
 
 @router.post("/login")
-def post_entrar(
+def post_login(
     request: Request, 
     matricula: str = Form(),
     senha: str = Form()):
     senha_hash = UsuarioRepo.obter_senha_por_matricula(matricula)
-    # se não encontrou senha para a matrícula 
+    # se não encontrou senha para o e-mail, 
     # é porque não está cadastrado
     if not senha_hash:
         response = RedirectResponse("/login", 303)
@@ -96,11 +80,34 @@ def post_entrar(
     }
     response = RedirectResponse("/", 303)
     adicionar_mensagem_sucesso(response, f"Olá, <b>{usuario.matricula}</b>. Você está autenticado!")
-    return response  
-
+    return response   
+    
 @router.get("/sair", name="sair")
 def get_sair(request: Request):
     request.session.clear()
     response = RedirectResponse("/", 303)
     adicionar_mensagem_info(response, "Você não está mais autenticado.")
     return response
+
+@router.get("/cadastro", name="cadastro")
+def get_cadastro(request: Request):
+    response = templates.TemplateResponse(
+        "cadastro.html", {"request": request})
+    return response
+
+@router.post("/cadastro")
+def post_cadastro(
+    request: Request, 
+    matricula: str = Form(pattern='^\d{5}[a-z]{2}\d{3}$'),
+    senha: str = Form()):
+    senha_hash = bcrypt.hashpw(senha.encode(), bcrypt.gensalt())
+    novo_usuario = Usuario(None, matricula, senha_hash.decode())
+    novo_usuario = UsuarioRepo.inserir(novo_usuario)
+    if novo_usuario:
+        response = RedirectResponse("/login", 303)
+        adicionar_mensagem_sucesso(response, "Cadastro realizado com sucesso! Use suas credenciais para entrar.")
+        return response
+    else:
+        response = RedirectResponse("/cadastro", 303)
+        adicionar_mensagem_erro(response, "Ocorreu algum problema ao tentar realizar seu cadastro. Tente novamente.")
+        return response

@@ -1,7 +1,7 @@
 from typing import List, Optional
 from models.livro_model import LivroModel
 from sql.livro_sql import *
-from utils.db import obter_conexao
+from util.db import obter_conexao
 
 class LivroRepo:
     @staticmethod

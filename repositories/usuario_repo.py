@@ -1,28 +1,31 @@
-import sqlite3
 from typing import List, Optional
-from models.usuario_model import UsuarioModel
+from models.usuario_model import Usuario
 from sql.usuario_sql import *
-from utils.db import obter_conexao
+from util.db import obter_conexao
 
 
 class UsuarioRepo:
     @staticmethod
-    def criar_tabela_usuario():
+    def criar_tabela():
         with obter_conexao() as db:
             cursor = db.cursor()
-            cursor.execute(SQL_CRIAR_TABELA_USUARIO)
+            cursor.execute(SQL_CRIAR_TABELA)
 
     @staticmethod
-    def inserir_usuario(usuario: UsuarioModel) -> Optional[UsuarioModel]:
-        with obter_conexao() as conexao:
-            db = conexao.cursor()
-            db.execute(SQL_INSERIR_USUARIO, 
-            (usuario.matricula, 
-            usuario.senha,))
-        if db.rowcount == 0:
+    def inserir(usuario: Usuario) -> Optional[Usuario]:
+        with obter_conexao() as db:
+            cursor = db.cursor()
+            cursor.execute(
+                SQL_INSERIR,
+                (
+                    usuario.matricula,
+                    usuario.senha,
+                ),
+            )
+            if cursor.rowcount == 0:
                 return None
-        usuario.id = db.lastrowid
-        return usuario
+            usuario.id = cursor.lastrowid
+            return usuario
 
     @staticmethod
     def obter_senha_por_matricula(matricula: str) -> Optional[str]:
@@ -35,55 +38,58 @@ class UsuarioRepo:
             return dados["senha"]
 
     @staticmethod
-    def obter_dados_por_matricula(matricula: str) -> Optional[UsuarioModel]:
+    def obter_dados_por_matricula(matricula: str) -> Optional[Usuario]:
         with obter_conexao() as db:
             cursor = db.cursor()
             cursor.execute(SQL_OBTER_DADOS_POR_MATRICULA, (matricula,))
             dados = cursor.fetchone()
             if dados is None:
                 return None
-            return UsuarioModel(
-                id=dados["id"],  
-                matricula=dados["matricula"],
-                senha=None)
+            return Usuario(**dados)
         
     @staticmethod
-    def alterar_usuario(usuario: UsuarioModel) -> bool:
+    def obter_por_id(id: int) -> Optional[Usuario]:
         with obter_conexao() as db:
             cursor = db.cursor()
-            cursor.execute(SQL_ALTERAR_USUARIO, (
-                usuario.matricula,
-                usuario.senha,
-                usuario.id,))
+            cursor.execute(SQL_OBTER_POR_ID, (id,))
+            dados = cursor.fetchone()
+            if dados is None:
+                return None
+            return Usuario(**dados)
+
+    @staticmethod
+    def atualizar_dados(usuario: Usuario) -> bool:
+        with obter_conexao() as db:
+            cursor = db.cursor()
+            cursor.execute(
+                SQL_ATUALIZAR_DADOS,
+                (
+                    usuario.matricula,
+                    usuario.id,
+                ),
+            )
             if cursor.rowcount == 0:
                 return False
             return True
-            
+
     @staticmethod
-    def excluir_usuario(id: int) -> bool:
+    def atualizar_senha(id: int, senha: str) -> bool:
         with obter_conexao() as db:
             cursor = db.cursor()
-            cursor.execute(SQL_EXCLUIR_USUARIO, (id,))
+            cursor.execute(SQL_ATUALIZAR_SENHA, (senha, id))
+            return cursor.rowcount > 0    
+
+    @staticmethod
+    def excluir(id: int) -> bool:
+        with obter_conexao() as db:
+            cursor = db.cursor()
+            cursor.execute(SQL_EXCLUIR, (id,))
             return cursor.rowcount > 0
-            
+        
     @staticmethod
-    def obter_usuario_por_id(id: int) -> Optional[UsuarioModel]:
-        with obter_conexao() as db:
-            cursor = db.cursor()
-            cursor.execute(SQL_OBTER_USUARIO_POR_ID, (id,))
-            linha = cursor.fetchone()
-            if linha:
-                return UsuarioModel(
-                    id=linha["id"],
-                    matricula=linha["matricula"],
-                    senha=linha["senha"])
-            else:
-                return None
-            
-    @staticmethod
-    def obter_todos_usuario() -> List[UsuarioModel]:
+    def obter_todos() -> List[Usuario]:
         with obter_conexao() as conexao:
             db = conexao.cursor()
-            tuplas = db.execute(SQL_OBTER_TODOS_USUARIO).fetchall()
-            livros = [UsuarioModel(*t) for t in tuplas]
-            return livros
+            tuplas = db.execute(SQL_OBTER_TODOS).fetchall()
+            usuarios = [Usuario(*t) for t in tuplas]
+            return usuarios

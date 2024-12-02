@@ -28,7 +28,9 @@
                 {% for livro in livros %}
                     <div class="col-md-4 mb-4">
                         <div class="card">
+                            <a href="./livro/{{livro.id}}.html">
                             <img src="/static/img/livros/{{'{:06d}'.format(livro.id)}}.jpg" alt="{{livro.titulo}}" class="img-thumbnail h-120">
+                            </a>
                         </div>
                     </div>
                 {% endfor %}
