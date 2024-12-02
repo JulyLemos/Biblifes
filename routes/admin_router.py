@@ -107,11 +107,11 @@ def post_excluir_livro(id: int = Form(...)):
         adicionar_mensagem_erro(response, "Não foi possível excluir o livro!")
         return response
     
-@router.get("/index_usuario")
+@router.get("/usuarios")
 def get_root(request: Request):
     usuarios = UsuarioRepo.obter_todos_usuario()
     response = templates.TemplateResponse(
-        "admin/index_usuario.html", {"request": request, "usuarios": usuarios})
+        "admin/usuarios.html", {"request": request, "usuarios": usuarios})
     return response
 
 @router.get("/alterar_usuario/{id}")
@@ -130,34 +130,11 @@ def post_alterar_usuario(
     senha: str = Form(...)):
     usuario = UsuarioModel(id, matricula, senha)
     if UsuarioRepo.alterar_usuario(usuario):
-        response = RedirectResponse("/admin/index_usuario", 303)
+        response = RedirectResponse("/admin/usuarios", 303)
         adicionar_mensagem_sucesso(response, "Usuario alterado com sucesso!")
         return response
     else:
         response = templates.TemplateResponse("/admin/alterar_usuario.html", {"request": request, "usuario": usuario})
-        adicionar_mensagem_erro(response, "Corrija os campos e tente novamente.")
-        return response
-    
-@router.get("/inserir_usuario")
-def get_inserir_usuario(request: Request):
-    usuario = UsuarioModel(None, None, None)
-    response = templates.TemplateResponse(
-        "admin/inserir_usuario.html", {"request": request, "usuario": usuario}
-    )
-    return response
-
-@router.post("/inserir_usuario")
-def post_inserir_usuario(
-    request: Request,
-    matricula: str = Form(...),
-    senha: int = Form(...)):
-    usuario = UsuarioRepo(None, matricula, senha)
-    if UsuarioRepo.inserir_usuario(usuario):
-        response = RedirectResponse("/admin/index_usuario", 303)
-        adicionar_mensagem_sucesso(response, "Usuario inserido com sucesso!")
-        return response
-    else:
-        response = templates.TemplateResponse("/admin/inserir_usuario.html", {"request": request, "usuario": usuario})
         adicionar_mensagem_erro(response, "Corrija os campos e tente novamente.")
         return response
     
@@ -170,17 +147,17 @@ def get_excluir_usuario(request: Request, id: int = Path(...)):
         )
         return response
     else:
-        response = RedirectResponse("/admin/index_usuario", 303)
+        response = RedirectResponse("/admin/usuarios", 303)
         adicionar_mensagem_erro(response, "O usuario que você tentou excluir não existe!")
         return response
     
 @router.post("/excluir_usuario")
 def post_excluir_usuario(id: int = Form(...)):
     if UsuarioRepo.excluir_usuario(id):
-        response = RedirectResponse("/admin/index_usuario", 303)
+        response = RedirectResponse("/admin/usuarios", 303)
         adicionar_mensagem_sucesso(response, "Usuario excluído com sucesso!")
         return response
     else:
-        response = RedirectResponse("/admin/index_usuario", 303)
+        response = RedirectResponse("/admin/usuarios", 303)
         adicionar_mensagem_erro(response, "Não foi possível excluir o usuario!")
         return response

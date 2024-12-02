@@ -6,4 +6,3 @@ class UsuarioModel:
     id: Optional[int] = None
     matricula: Optional[str]= None
     senha: Optional[str] = None
-    perfil: Optional[int] = None

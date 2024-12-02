@@ -2,7 +2,8 @@ import sqlite3
 from typing import List, Optional
 from models.usuario_model import UsuarioModel
 from sql.usuario_sql import *
-from util import obter_conexao
+from utils.db import obter_conexao
+
 
 class UsuarioRepo:
     @staticmethod
@@ -17,8 +18,7 @@ class UsuarioRepo:
             db = conexao.cursor()
             db.execute(SQL_INSERIR_USUARIO, 
             (usuario.matricula, 
-            usuario.senha,
-            usuario.perfil,))
+            usuario.senha,))
         if db.rowcount == 0:
                 return None
         usuario.id = db.lastrowid
@@ -40,14 +40,12 @@ class UsuarioRepo:
             cursor = db.cursor()
             cursor.execute(SQL_OBTER_DADOS_POR_MATRICULA, (matricula,))
             dados = cursor.fetchone()
-            print(f"Dados obtidos para a matrícula {matricula}: {dados}")  # Depuração
             if dados is None:
                 return None
             return UsuarioModel(
-                id=dados["id"],  # Certifique-se de que "id" é o nome correto no banco
+                id=dados["id"],  
                 matricula=dados["matricula"],
-                senha=None,  # A senha não é retornada aqui
-                perfil=dados["perfil"])
+                senha=None)
         
     @staticmethod
     def alterar_usuario(usuario: UsuarioModel) -> bool:
@@ -56,7 +54,6 @@ class UsuarioRepo:
             cursor.execute(SQL_ALTERAR_USUARIO, (
                 usuario.matricula,
                 usuario.senha,
-                usuario.perfil,
                 usuario.id,))
             if cursor.rowcount == 0:
                 return False
@@ -74,10 +71,14 @@ class UsuarioRepo:
         with obter_conexao() as db:
             cursor = db.cursor()
             cursor.execute(SQL_OBTER_USUARIO_POR_ID, (id,))
-            dados = cursor.fetchone()
-            if dados is None:
+            linha = cursor.fetchone()
+            if linha:
+                return UsuarioModel(
+                    id=linha["id"],
+                    matricula=linha["matricula"],
+                    senha=linha["senha"])
+            else:
                 return None
-            return UsuarioModel(**dados)
             
     @staticmethod
     def obter_todos_usuario() -> List[UsuarioModel]:
@@ -86,26 +87,3 @@ class UsuarioRepo:
             tuplas = db.execute(SQL_OBTER_TODOS_USUARIO).fetchall()
             livros = [UsuarioModel(*t) for t in tuplas]
             return livros
-    
-    # @staticmethod
-    # def inserir_usuarios_iniciais():
-    #     with obter_conexao() as db:
-    #         cursor = db.cursor()
-    #         cursor.execute("SELECT COUNT(*) AS count FROM usuario;")
-    #         count = cursor.fetchone()[0]
-    #         if count > 0:
-    #             return
-    #         usuarios_iniciais = [
-    #             ("20231in001", "123456"),
-    #             ("20231in002", "234567"),
-    #             ("20231in003", "345678"),
-    #             ("20231in004", "456789"),
-    #             ("20231in005", "567890"),
-    #             ("20231in006", "678901"),
-    #             ("20231in007", "789012"),
-    #             ("20231in008", "890123"),
-    #             ("20231in009", "901234"),
-    #             ("20231in010", "012345")]
-    #         for matricula, senha in usuarios_iniciais:
-    #             cursor.execute(SQL_INSERIR_USUARIO, (matricula, senha))
-    #         db.commit()

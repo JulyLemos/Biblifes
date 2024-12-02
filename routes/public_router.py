@@ -45,7 +45,7 @@ def post_cadastro(
     matricula: str = Form(...),
     senha: str = Form(...)):
     senha_hash = bcrypt.hashpw(senha.encode(), bcrypt.gensalt())
-    novo_usuario = UsuarioModel(None, matricula, senha_hash.decode(), 1)
+    novo_usuario = UsuarioModel(None, matricula, senha_hash.decode())
     novo_usuario = UsuarioRepo.inserir_usuario(novo_usuario)
     if novo_usuario:
         response = RedirectResponse("/", 303)
@@ -84,8 +84,7 @@ def post_entrar(
     # cria a sessão e manda o usuário para a página principal
     usuario = UsuarioRepo.obter_dados_por_matricula(matricula)
     request.session["usuario"] = {
-        "matricula": usuario.matricula,
-        "perfil": usuario.perfil
+        "matricula": usuario.matricula
     }
     response = RedirectResponse("/", 303)
     adicionar_mensagem_sucesso(response, f"Olá, <b>{usuario.matricula}</b>. Você está autenticado!")
