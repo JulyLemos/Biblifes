@@ -99,3 +99,8 @@ p {
     height: 1px;
     background-color: white;
 }
+
+#link-lar {
+    display: flex;
+    justify-content: center;
+}
